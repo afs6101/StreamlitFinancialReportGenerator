@@ -370,7 +370,7 @@ if uploaded_file is not None:
         # ===== CREATE AND DOWNLOAD PDF =====
         # Generate PDF when user clicks button
         if st.button("📄 Generate PDF Report"):
-            pdf_bytes = generate_pdf_report(df, "Financial_Report.pdf")
+            pdf_bytes = bytes(generate_pdf_report(df, "Financial_Report.pdf"))
             
             # Show success message
             st.success("✓ PDF generated successfully!")
