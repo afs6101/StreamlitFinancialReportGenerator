@@ -27,7 +27,7 @@ st.set_page_config(
 )
 
 # ===== MAIN TITLE =====
-st.title("📊 Faculty Financial Report Generator")
+st.title("📊 Financial Report Generator")
 st.markdown("*Upload your SIMBA CSV/Excel file to generate summary and forecast reports*")
 
 # ===== SIDEBAR INFO =====
@@ -36,13 +36,13 @@ st.markdown("*Upload your SIMBA CSV/Excel file to generate summary and forecast 
 with st.sidebar:
     st.markdown("### How it works:")
     st.markdown("""
-    1. Upload your SIMBA export file (CSV or Excel)
+    1. Upload your SIMBA export file
     2. View department summary & spending forecast
     3. Download PDF summary report
     4. Download individual CSV files
     """)
     st.markdown("---")
-    st.markdown("**Prepared for:** Penn State Finance\n\n**User:** afs6101@psu.edu")
+    st.markdown("**Prepared for:** Penn State AE Department \n\n**Developer:** Amin Sepehri")
 
 # ===== FILE UPLOAD WIDGET =====
 # Creates a button where users can select a file from their computer
@@ -356,9 +356,9 @@ if uploaded_file is not None:
                 # Show top 10 risk items
                 pdf.set_fill_color(255, 200, 200)  # Light red for risky items
                 for item_name, overage in risk_items[:10]:
-                    pdf.cell(0, 8, f"⚠️ {item_name[:50]}: ${overage:,.0f} overage", border=1, fill=True, ln=True)
+                    pdf.cell(0, 8, f"{item_name[:50]}: ${overage:,.0f} overage", border=1, fill=True, ln=True)
             else:
-                pdf.cell(0, 8, "✓ No high-risk items identified", ln=True)
+                pdf.cell(0, 8, "OK: No high-risk items identified", ln=True)
             
             # ===== FOOTER =====
             pdf.ln(10)
