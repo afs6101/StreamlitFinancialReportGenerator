@@ -4,7 +4,7 @@ Automate manual faculty financial account monitoring with a zero-installation we
 
 ## How to Access
 
-**Live App:** [INSERT_STREAMLIT_URL_HERE]
+**Live App:** [https://financialreportgenerator.streamlit.app/]
 
 Simply click the link and start uploading your SIMBA files. No login required.
 
